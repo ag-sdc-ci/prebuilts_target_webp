@@ -1,6 +1,7 @@
-shadow prebuilt repo: webp (target)
+shadow prebuilt repo: webp (target + host dual slice)
   upstream: external/webp
-  api-level: 32 (branch 32-20261016)
-  blobs: org.blisslabs.ag.webp.apex org.blisslabs.ag.webp.dev.apex org.blisslabs.ag.webp.doc.apex
-  dev-src: extracted dev payload + webp headers + root Android.bp
+  api-level: 34 (branch 34-20261016)
+  blobs: org.blisslabs.ag.webp.apex
+  dev-src: dual-slice extractive payload (target/ bionic, host/ glibc, include/) + root Android.bp
+  modules: libwebp-decode, libwebp-encode, webp-headers
   date: 2026-10-16

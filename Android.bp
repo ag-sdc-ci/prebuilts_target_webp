@@ -1,3 +1,6 @@
+// Auto-generated prebuilt Blueprint for external/webp
+// Dual-slice extractive shadow (target bionic + host glibc)
+
 package {
     default_applicable_licenses: ["external_webp_license"],
 }
@@ -15,27 +18,17 @@ license {
     ],
 }
 
-prebuilt_apex {
-    name: "org.blisslabs.ag.webp",
-    apex_name: "org.blisslabs.ag.webp",
-    source_apex_name: "org.blisslabs.ag.webp",
-    arch: {
-        x86_64: {
-            src: "org.blisslabs.ag.webp.apex",
-        },
-    },
-    filename: "org.blisslabs.ag.webp.apex",
-    prefer: true,
-    installable: true,
-}
-
 cc_library_headers {
     name: "webp-headers",
     host_supported: true,
     vendor_available: true,
     product_available: true,
     recovery_available: true,
-    export_include_dirs: ["dev-src/include"],
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
 }
 
 cc_prebuilt_library_static {
@@ -44,8 +37,19 @@ cc_prebuilt_library_static {
     vendor_available: true,
     product_available: true,
     recovery_available: true,
-    export_include_dirs: ["dev-src/include"],
-    srcs: ["dev-src/lib/libwebp-encode.a"],
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    target: {
+        host: {
+            srcs: ["host/lib64/libwebp-encode.a"],
+        },
+        android: {
+            srcs: ["target/lib64/libwebp-encode.a"],
+        },
+    },
 }
 
 cc_prebuilt_library_static {
@@ -54,6 +58,17 @@ cc_prebuilt_library_static {
     vendor_available: true,
     product_available: true,
     recovery_available: true,
-    export_include_dirs: ["dev-src/include"],
-    srcs: ["dev-src/lib/libwebp-decode.a"],
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    target: {
+        host: {
+            srcs: ["host/lib64/libwebp-decode.a"],
+        },
+        android: {
+            srcs: ["target/lib64/libwebp-decode.a"],
+        },
+    },
 }
