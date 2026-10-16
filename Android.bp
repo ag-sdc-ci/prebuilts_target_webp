@@ -1,0 +1,59 @@
+package {
+    default_applicable_licenses: ["external_webp_license"],
+}
+
+license {
+    name: "external_webp_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-BSD",
+    ],
+    license_text: [
+        "COPYING",
+        "NOTICE",
+        "PATENTS",
+    ],
+}
+
+prebuilt_apex {
+    name: "org.blisslabs.ag.webp",
+    apex_name: "org.blisslabs.ag.webp",
+    source_apex_name: "org.blisslabs.ag.webp",
+    arch: {
+        x86_64: {
+            src: "org.blisslabs.ag.webp.apex",
+        },
+    },
+    filename: "org.blisslabs.ag.webp.apex",
+    prefer: true,
+    installable: true,
+}
+
+cc_library_headers {
+    name: "webp-headers",
+    host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    export_include_dirs: ["dev-src/include"],
+}
+
+cc_prebuilt_library_static {
+    name: "libwebp-encode",
+    host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    export_include_dirs: ["dev-src/include"],
+    srcs: ["dev-src/lib/libwebp-encode.a"],
+}
+
+cc_prebuilt_library_static {
+    name: "libwebp-decode",
+    host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    export_include_dirs: ["dev-src/include"],
+    srcs: ["dev-src/lib/libwebp-decode.a"],
+}

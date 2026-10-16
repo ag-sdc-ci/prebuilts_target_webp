@@ -1,0 +1,6 @@
+shadow prebuilt repo: webp (target)
+  upstream: external/webp
+  api-level: 32 (branch 32-20261016)
+  blobs: org.blisslabs.ag.webp.apex org.blisslabs.ag.webp.dev.apex org.blisslabs.ag.webp.doc.apex
+  dev-src: extracted dev payload + webp headers + root Android.bp
+  date: 2026-10-16

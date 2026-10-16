@@ -1,0 +1,13 @@
+{
+	"provideLibs": [	
+		    "libdummy_binary_libwebp-decode.a-x86_64-v2.so",
+		    "libdummy_binary_libwebp-decode.a.so",
+		    "libdummy_binary_libwebp-encode.a-x86_64-v2.so",
+		    "libdummy_binary_libwebp-encode.a.so",
+		    "libdummy_headers_webp-x86_64-v2.so",
+		    "libdummy_headers_webp.so",
+		    "libdummy_webp_dev-x86_64-v2.so",
+		    "libdummy_webp_dev.so"
+	],
+	"visible": true
+}
